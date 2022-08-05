@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../service/auth2.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor() {
   }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.authService.isLoggedIn) {
-      console.log(this.authService.isLoggedIn)
+    if (localStorage.getItem('logged') === 'true') {
+      console.log('authorized')
       return true;
     }
-    console.log(this.authService.isLoggedIn)
+    console.log('unathorized')
+    console.log(localStorage.getItem('logged'))
     alert('Restricted! Only list and detail/:id are public!')
     return false;
   }

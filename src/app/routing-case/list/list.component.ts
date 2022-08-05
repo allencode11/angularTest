@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../service/auth2.service';
 
 
 @Component({
@@ -17,14 +17,14 @@ export class ListComponent implements OnInit {
   ngOnInit() {
   }
 
-  onLogin(username: string = 'user') {
-    // this.authService.login(username).subscribe(data => {
-    //   console.log(data);
-    // });
+  onLogin() {
+    this.authServise.login();
+    console.log(this.authServise.open.value);
   }
 
   logout() {
-    // this.authService.logoutUser();
+    this.authServise.logout();
+    console.log(this.authServise.open.value);
 
   }
 
