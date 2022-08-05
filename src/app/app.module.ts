@@ -3,18 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CardComponent } from './filter-priority/card/card.component';
 import { FilterPriorityModule } from './filter-priority/filter-priority.module';
+import { ModalModule } from './modal/modal.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FilterPriorityModule,
+    ModalModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
