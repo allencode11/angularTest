@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { ModalComponent } from './modal/modal.component';
 import { FormComponent } from './form/form.component';
+import { ModalRoutingModule } from './modal-routing.module';
 
 
 
@@ -18,6 +19,7 @@ import { FormComponent } from './form/form.component';
   ],
   imports: [
     CommonModule,
+    ModalRoutingModule,
   ],
 })
 export class ModalModule { }
