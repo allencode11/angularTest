@@ -6,13 +6,10 @@ import { ModalService } from '../services/modal.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   constructor(private modalService: ModalService) { }
-
-  ngOnInit(): void {
-  }
-
+  
   openModal() {
     this.modalService.open()
   }

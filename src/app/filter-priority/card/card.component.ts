@@ -6,16 +6,12 @@ import { Item } from '../types';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
-
+export class CardComponent {
   items: Item[] = [
     {name: "Johny Montana", priority: 5000},
     {name: "James Adam", priority: 100},
     {name: "Lowis Panini", priority: 3500},
-  ]
-  constructor() { }
+  ];
 
-  ngOnInit(): void {
-  }
-
+  constructor() { };
 }

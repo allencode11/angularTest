@@ -8,16 +8,13 @@ import { AuthService } from '../service/auth2.service';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor() {
+  constructor(private authService: AuthService) {
   }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (localStorage.getItem('logged') === 'true') {
-      console.log('authorized')
+    if (this.authService.isAuthentcated()) {
       return true;
-    }
-    console.log('unathorized')
-    console.log(localStorage.getItem('logged'))
+    };
     alert('Restricted! Only list and detail/:id are public!')
     return false;
   }

@@ -16,4 +16,11 @@ export class AuthService {
     this.open.next(false);
     localStorage.setItem('logged', 'false');
   }
+
+  isAuthentcated(): boolean {
+    if(localStorage.getItem('logged')=== 'true') {
+      return true;
+    };
+    return false;
+  }
 }

@@ -12,7 +12,6 @@ import { FilterRoutingModule } from './filter-routing.module';
     CardComponent,
   ],
   exports: [
-    PriorityPipe,
     CardComponent,
   ],
   imports: [

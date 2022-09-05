@@ -15,7 +15,6 @@ import { ModalRoutingModule } from './modal-routing.module';
   ],
   exports: [
     HomeComponent,
-    FormComponent,
   ],
   imports: [
     CommonModule,

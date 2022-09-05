@@ -7,25 +7,20 @@ import { AuthService } from '../service/auth2.service';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
-  invalidCredentialMsg: string= '';
-  username: string = '';
-
+export class ListComponent {
   constructor(private authServise: AuthService) {
   }
 
-  ngOnInit() {
-  }
-
-  onLogin() {
+  onLogin(): void {
     this.authServise.login();
-    console.log(this.authServise.open.value);
   }
 
-  logout() {
+  logout(): void {
     this.authServise.logout();
-    console.log(this.authServise.open.value);
+  }
 
+  isLogged(): boolean {
+    return this.authServise.isAuthentcated();
   }
 
 }

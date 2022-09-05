@@ -10,11 +10,11 @@ import { ModalService } from '../services/modal.service';
 export class ModalComponent {
   isDisplay: boolean = false;
 
-  constructor(modalService: ModalService) {
+  constructor( private modalService: ModalService ) {
     modalService.display.subscribe(response => this.isDisplay = response);
   }
 
   closeModal(): void {
-    this.isDisplay = false;
+    this.modalService.close();
   }
 }

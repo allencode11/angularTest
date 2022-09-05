@@ -1,4 +1,3 @@
 <p>list works!</p>
-
-<button (click)="onLogin()">Login</button>
-<button (click)="logout()">LogOut</button>
+<button (click)="onLogin()" *ngIf="!isLogged()">Login</button>
+<button (click)="logout()" *ngIf="isLogged()">LogOut</button>
