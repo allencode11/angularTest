@@ -18,9 +18,6 @@ export class AuthService {
   }
 
   isAuthentcated(): boolean {
-    if(localStorage.getItem('logged')=== 'true') {
-      return true;
-    };
-    return false;
+    return localStorage.getItem('logged') === 'true';
   }
 }

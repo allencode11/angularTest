@@ -1,27 +1,56 @@
-# AngularTest
+# Angular Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+### This is an angular project for a 45 min test with the following tasks:
+1. create a modal component
+
+
+2. show only people with priority more than 500 from the list:
+   - name: "Johny Montana", priority: 5000;
+   - name: "James Adam", priority: 100;
+   - name: "Lowis Panini", priority: 3500;
+   
+
+3. create the following routes:
+   - create - this route can be accessed only by logged users; 
+   - edit/:id - this route can be accessed only by logged users; 
+   - delete/:id - this route can be accessed only by logged users; 
+   - list - this route can access all users; 
+   - detail/:id - this route can be accessed by all users;
+
+### My solution:
+1. Modal component:
+   - route: http://localhost:4200/ex1
+   - a modal component that can be opened or closed using modal service and uses ng-content to display title on top and the rest of content at the bottom;
+   - modal service is a service with a public field display of type BehaviorSubject<boolean> and 2 function for closing and opening (set the next value false and true);
+   - a form component that uses modal component and title selector for ng content
+   - home component - a page where we use form component
+
+
+2. Filter by priority:
+   - route: http://localhost:4200/ex2
+   - card component that displays the name and the priority;
+   - priority pipe witch removes from the array the items with priority less or equal with 500;
+
+
+
+3. Filter by priority:
+
+    - routes: 
+      - http://localhost:4200/ex3/list;
+      - http://localhost:4200/ex3/detail/1
+      - http://localhost:4200/ex3/create
+      - http://localhost:4200/ex3/delete/1
+      - http://localhost:4200/ex3/edit/1
+
+    - auth service has one field of type BehaviourSubject<boolean> and 3 function (login, logout, isAuthenticated); 
+    - auth guard witch allow to access the route only if the user is authenticated;
+    - create, delete, edit pages;
+    - list and detail page with button for login or logout;
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
